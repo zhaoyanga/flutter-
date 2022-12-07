@@ -29,4 +29,10 @@ class Person {
   void say() {
     print("我叫$name,我今年$age岁了");
   }
+
+  // 静态方法中是不能直接使用 普通成员变量/方法 的
+  static void printName() {
+    // say(); // 无法从静态方法访问实例化成员
+    print('我是$name' /*$age*/);
+  }
 }
