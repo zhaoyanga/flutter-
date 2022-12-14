@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' as math;
 main() {
   // 实例化
   Ve2 p = Ve2(3, 4);
@@ -25,10 +25,10 @@ class Ve2 {
   String getInfo() => "$name$x,$y"; // name读的是 get name
 
   // 返回传入值的正平方根
-  double getLength() => sqrt(x * x + y * y);
+  double getLength() => math.sqrt(x * x + y * y);
 
   // 等同于上面的方法，调用时不加 (), 修饰方法，语法糖，只读
-  double get length => sqrt(x * x + y * y);
+  double get length => math.sqrt(x * x + y * y);
 
   String get name => _name ?? "";
 

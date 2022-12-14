@@ -3,8 +3,15 @@ main() {
   // P.x = 4; // 报错
 
   Person.name = '雷学林';
+  print(Person.name); // 雷学林
   Person p1 = Person(23);
+  Person p2 = Person(18);
   p1.say(); // 我叫雷学林,我今年23岁了
+  p2.say(); // 我叫雷学林,我今年18岁了
+
+  Person.name = '李艺';
+  p1.say(); // 我叫李艺,我今年23岁了
+  p2.say(); // 我叫李艺,我今年18岁了
 }
 
 class Vec2 {
@@ -31,6 +38,7 @@ class Person {
   }
 
   // 静态方法中是不能直接使用 普通成员变量/方法 的
+  // 普通成员只有实例对象可以调用
   static void printName() {
     // say(); // 无法从静态方法访问实例化成员
     print('我是$name' /*$age*/);

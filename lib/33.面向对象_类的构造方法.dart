@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' as math;
 main() {
   Vec2 P0 = Vec2(4, 3,name:'P0');
   print(P0.getInfo());  // P04.0,3.0
@@ -8,7 +8,7 @@ main() {
 
   Vec3 P2 = Vec3(y: 5);
 
-  Vec4 P3 = Vec4.polar(10, pi/4);
+  Vec4 P3 = Vec4.polar(10, math.pi / 4);
   print(P3.getInfo()); // 7.0710678118654755,7.0710678118654755
 
   Vec4 P4 = Vec4.ride(10, 5);
@@ -50,8 +50,8 @@ class Vec4 {
   double y;
   // 命名构造
   Vec4.polar(double length,double rad)
-    : x = length * cos(rad),
-      y = length * sin(rad);
+    : x = length * math.cos(rad),
+      y = length * math.sin(rad);
   Vec4.ride(double a,double b)
     : x = a - b,
       y = b - a;
