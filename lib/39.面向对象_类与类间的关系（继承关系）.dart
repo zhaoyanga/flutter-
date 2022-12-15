@@ -1,5 +1,3 @@
-import 'package:myapp/33.%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.dart';
-
 main() {
   Circle circle = Circle(Vec2(100,100), 50);
   Rectangle rectangle = Rectangle(Vec2(50,50));
