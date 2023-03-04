@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const TowMyApp());
+}
+
+class TowMyApp extends StatelessWidget {
+  const TowMyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      textDirection: TextDirection.ltr, // 从左往右排列
+      children: [
+        Expanded(child: MyApp(color:Colors.pink,title:'我是谁')),
+        Expanded(child: MyApp(color:Colors.yellow,title:'雷学林')),
+      ],
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  const MyApp({super.key,required this.color,required this.title});
+  final MaterialColor color;
+  final String title;
   // This widget is the root of your application. 这个小部件是应用程序的根
   @override
   Widget build(BuildContext context) {
@@ -14,32 +30,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application. 这是应用程序的主题
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.green,
+        primarySwatch: color,
       ),
-      home: const MyHomePage(title: '功德无量'),
+      home: MyHomePage(title: title),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 

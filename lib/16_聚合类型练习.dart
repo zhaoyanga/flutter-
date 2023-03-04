@@ -1,7 +1,6 @@
 main() {
   List<String> list = ['零','一','二','二'];
   print(list.toSet()); // {零, 一, 二}
-
   Set<int> set = {1,2,3,4};
   print(set.toList()); // [1, 2, 3, 4]
 
