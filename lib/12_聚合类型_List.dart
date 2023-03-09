@@ -10,4 +10,16 @@ main() {
   list[0] = '一';
   print(list); // [壹, 贰, 叁, 肆, 伍, 陆, 柒, 捌, 玖, 拾, 十一, 十二, 十三, 十四, 十五]
   print(list[0]); // 壹
+  
+  List<Map<String,String>> arr = [
+    {
+      'id':'1',
+      'name':'传奇'
+    },
+    {
+      'id':'2',
+      'name':'枪械'
+    }
+  ];
+  print(arr.length);
 }

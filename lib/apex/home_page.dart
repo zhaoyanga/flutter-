@@ -41,9 +41,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // return Scaffold(
+    //     body: homePageList[tabBarIndex],
+    //     bottomNavigationBar: BottomButton(tabBarIndex:tabBarIndex,tabBarTap:tabBarTap,buttonList:tabList),
+    // );
     return Scaffold(
-        body: homePageList[tabBarIndex],
-        bottomNavigationBar: BottomButton(tabBarIndex:tabBarIndex,tabBarTap:tabBarTap,buttonList:tabList),
+      body: IndexedStack( // 切换时保持状态
+        children: homePageList,
+        index: tabBarIndex
+      ),
+      bottomNavigationBar: BottomButton(tabBarIndex:tabBarIndex,tabBarTap:tabBarTap,buttonList:tabList),
     );
   }
 
